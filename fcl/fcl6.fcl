@@ -12,23 +12,23 @@ END_VAR
 
 FUZZIFY commitment
 	TERM nothing := GAUSS 0 1;
-	TERM minimal := GAUSS 1 1;
-	TERM partially := GAUSS 2 1;
-	TERM satISfactory := GAUSS 3 1;
-	TERM largely := GAUSS 4 1;
-	TERM fully := GAUSS 5 1;
+	TERM minimal := GAUSS 1.5 1;
+	TERM partially := GAUSS 3 1;
+	TERM satISfactory := GAUSS 4.5 1;
+	TERM largely := GAUSS 6 1;
+	TERM fully := GAUSS 7.5 1;
 END_FUZZIFY
 
 FUZZIFY clarity
 	TERM low := GAUSS 0 1;
-	TERM medium := GAUSS 2.5 1;
-	TERM high:= GAUSS 5 1;
+	TERM medium := GAUSS 0.5 1;
+	TERM high:= GAUSS 2 1;
 END_FUZZIFY
 
 FUZZIFY influence
 	TERM low := GAUSS 0 1;
-	TERM medium := GAUSS 2.5 1;
-	TERM high:= GAUSS 5 1;
+	TERM medium := GAUSS 0.5 1;
+	TERM high:= GAUSS 2 1;
 END_FUZZIFY
 
 DEFUZZIFY service_quality

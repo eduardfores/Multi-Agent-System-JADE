@@ -21,14 +21,14 @@ END_FUZZIFY
 
 FUZZIFY clarity
 	TERM low := GAUSS 0 1;
-	TERM medium := GAUSS 2.5 1;
-	TERM high:= GAUSS 5 1;
+	TERM medium := GAUSS 1.5 1;
+	TERM high:= GAUSS 2 1;
 END_FUZZIFY
 
 FUZZIFY influence
 	TERM low := GAUSS 0 1;
-	TERM medium := GAUSS 2.5 1;
-	TERM high:= GAUSS 5 1;
+	TERM medium := GAUSS 1.5 1;
+	TERM high:= GAUSS 2 1;
 END_FUZZIFY
 
 DEFUZZIFY service_quality

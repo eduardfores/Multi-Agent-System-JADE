@@ -79,11 +79,11 @@ public class Main {
 			 while(!finishProcess) {
 				 //initialize the system
 				 System.out.println("First of all we have to initialize the which process we want to do.");
-				 System.out.println("You must write one of these 2 options: \n - I_configuration1.xml"/* \n - I_configuration2.xml"*/);
+				 System.out.println("You must write one of these 2 options: \n - I_configuration1.xml \n - I_configuration2.xml");
 				 System.out.print("Write:");
 				 String configuration = keyboard.next();
 	
-				 while(!configuration.equals("I_configuration1.xml") /*&& !configuration.equals("I_configuration2.xml")*/) {
+				 while(!configuration.equals("I_configuration1.xml") && !configuration.equals("I_configuration2.xml")) {
 					 System.out.println("you do not write good the configuration name. It must begin by \'I\'");
 					 System.out.print("Rewrite the configuration please:");
 					 configuration = keyboard.next();
@@ -100,15 +100,15 @@ public class Main {
 				 
 				 if(configuration.equals("I_configuration1.xml")) {
 					 System.out.println("- D_requests_tipper.txt");
-				 } /*else {
+				 } else {
 	
 					 System.out.println("- D_requests_quality.txt");
-				 }*/
+				 }
 				 System.out.print("Write:");
 				 
 				 String decision = keyboard.next();
 	
-				 while(!decision.equals("D_requests_tipper.txt") /*&& !decision.equals("D_requests_quality.txt")*/) {
+				 while(!decision.equals("D_requests_tipper.txt") && !decision.equals("D_requests_quality.txt")) {
 					 System.out.println("you do not write good the configuration name. It must begin by \'D\'");
 					 System.out.print("Rewrite the configuration please:");
 					 decision = keyboard.next();
