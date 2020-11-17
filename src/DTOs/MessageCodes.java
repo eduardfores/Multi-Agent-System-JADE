@@ -1,0 +1,8 @@
+package DTOs;
+
+public enum MessageCodes {
+	FUZZY_AGENTS_CREATED,
+	FUZZY_AGENTS_ERROR,
+	RESULTS_SAVED,
+	RESULTS_SAVED_ERROR
+}
