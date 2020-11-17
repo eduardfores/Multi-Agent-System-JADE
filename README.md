@@ -1,6 +1,6 @@
 # Multi-Agent-System-JADE
 
-[]!(https://img.shields.io/badge/license-GPL--v3.0-orange)![]
+[![License](https://img.shields.io/badge/license-GPL--v3.0-orange)](https://github.com/eduardfores/Multi-Agent-System-JADE)
 
 Introduccion
 -------------
