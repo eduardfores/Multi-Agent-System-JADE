@@ -85,7 +85,7 @@ public class ManagerAgentBehaviour extends CyclicBehaviour {
    		for(int i=0; i<this.settings.getFuzzyagents(); i++) {
    			
    			try {
-   				agentController.add(CreateAgent.createFuzzyAgent(this.settings.getApplication(), i,this.container, FCLS_PATH+fcls[i]+FCL_EXTENSION));
+   				agentController.add(CreateAgent.createFuzzyAgent(this.settings.getApplication(), i ,this.container, FCLS_PATH+fcls[i]+FCL_EXTENSION));
 			} catch (StaleProxyException e) {
 				System.out.println(e.getMessage());
 				reply.setContent(MessageCodes.FUZZY_AGENTS_ERROR.toString());
@@ -107,7 +107,8 @@ public class ManagerAgentBehaviour extends CyclicBehaviour {
 			int lines = (int)counter.lines().count();
 			//we add the new behaviour in the managerAgent to listen the responses of the FuzzyAgents
 			ReciveMessagesFromFuzzyAgentBehaviour reciveMessagesFromFuzzyAgentBehaviour = 
-					new ReciveMessagesFromFuzzyAgentBehaviour(this.myAgent, this.settings.getApplication(), this.settings.getFuzzyagents(),lines-1, msg, this.agentController);
+					new ReciveMessagesFromFuzzyAgentBehaviour(this.myAgent, this.settings.getApplication(), this.settings.getFuzzyagents(),lines-1, 
+							msg, this.agentController);
 			myAgent.addBehaviour(reciveMessagesFromFuzzyAgentBehaviour);
 			
 			//open file with all data

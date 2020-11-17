@@ -114,7 +114,7 @@ public class Main {
 					 decision = keyboard.next();
 				 }
 				 
-				 userAgentController.putO2AObject(decision, false);
+				 userAgentController.putO2AObject(decision, AgentController.SYNC);
 				 
 				 //It is not the best solution to syncronize the userAgent with the main process but is the fastest
 				 Thread.sleep(1000);

@@ -6,6 +6,7 @@ import jade.core.Agent;
 import jade.lang.acl.ACLMessage;
 
 public class SendMessages {
+	
 	public static void sendMessagesToFuzzyAgents(Agent myAgent, String info, String application, SimulationSettings settings, int rowNum) {
 		
 		final ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);

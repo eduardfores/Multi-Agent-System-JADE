@@ -45,8 +45,7 @@ public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
 	public void action() {
 		ACLMessage msg = myAgent.receive(performativeFilter);
 		if(msg != null) {
-			//System.out.println(vars[0]+" "+myAgent.getName()+" "+tip.getLatestDefuzzifiedValue());
-			//System.out.println(msg.getContent());
+
 			String[] reply=msg.getContent().split("_");
 			
 			if(this.results.get(Integer.parseInt(reply[0])) != null) {
@@ -101,6 +100,9 @@ public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
 					System.out.println(e.getMessage());
 				}
 			});
+			
+			this.agentController.clear();
+			this.myAgent.removeBehaviour(this);
 			
             try {
             	if (bw != null)
