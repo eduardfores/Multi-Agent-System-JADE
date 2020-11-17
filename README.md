@@ -1,6 +1,6 @@
 # Multi-Agent-System-JADE
 
-[]!(https://camo.githubusercontent.com/a6fb1d154d7636c59efbf8ccd542c06e3a4191940997d9f23e95a7612482944b/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f746f66756c2f47656e65746963416c676f726974686d3f7374796c653d706c6173746963)![]
+[]!(https://img.shields.io/badge/license-GPL--v3.0-orange)![]
 
 Introduccion
 -------------
