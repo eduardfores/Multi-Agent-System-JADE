@@ -107,7 +107,7 @@ public class ManagerAgentBehaviour extends CyclicBehaviour {
 			int lines = (int)counter.lines().count();
 			//we add the new behaviour in the managerAgent to listen the responses of the FuzzyAgents
 			ReciveMessagesFromFuzzyAgentBehaviour reciveMessagesFromFuzzyAgentBehaviour = 
-					new ReciveMessagesFromFuzzyAgentBehaviour(myAgent, this.settings.getApplication(), this.settings.getFuzzyagents(),lines-1, msg);
+					new ReciveMessagesFromFuzzyAgentBehaviour(this.myAgent, this.settings.getApplication(), this.settings.getFuzzyagents(),lines-1, msg, this.agentController);
 			myAgent.addBehaviour(reciveMessagesFromFuzzyAgentBehaviour);
 			
 			//open file with all data

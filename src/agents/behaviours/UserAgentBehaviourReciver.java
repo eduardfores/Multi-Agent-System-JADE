@@ -31,6 +31,9 @@ public class UserAgentBehaviourReciver extends CyclicBehaviour {
 				System.out.println("The store of results in managerAgent have problems in the creation");
 			}else if(replySplited[0].equals(MessageCodes.RESULTS_SAVED.toString())) {
 				System.out.println("The results are in the file: "+RESULTS_PATH+replySplited[1]+FILE_RESULTS);
+				System.out.println("******************");
+				System.out.println("*Process Finished*");
+				System.out.println("******************");
 			}
 		} else {
 			block();

@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import DTOs.MessageCodes;
@@ -11,6 +12,8 @@ import jade.core.*;
 import jade.core.behaviours.*;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import jade.wrapper.AgentController;
+import jade.wrapper.StaleProxyException;
 
 public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
     
@@ -25,8 +28,10 @@ public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
     private int testCounter;
     private ACLMessage msg;
     private Map<Integer, Double> results;
+    private List<AgentController> agentController;
     
-	public ReciveMessagesFromFuzzyAgentBehaviour(Agent agent, String application, int numFuzzyAgents, int numTests, ACLMessage msg) {
+	public ReciveMessagesFromFuzzyAgentBehaviour(Agent agent, String application, int numFuzzyAgents, 
+			int numTests, ACLMessage msg, List<AgentController> agentController) {
 		super(agent);
 		this.application = application;
 		this.numFuzzyAgents = numFuzzyAgents;
@@ -34,6 +39,7 @@ public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
 		this.msg=msg;
 		this.testCounter=0;
 		this.results = new HashMap<Integer, Double>();
+		this.agentController = agentController;
 	}
 
 	public void action() {
@@ -86,6 +92,15 @@ public class ReciveMessagesFromFuzzyAgentBehaviour extends CyclicBehaviour {
         	
 			replyMsg.setContent(MessageCodes.RESULTS_SAVED.toString()+"-"+this.application);
 			myAgent.send(replyMsg);
+			
+			//kill fuzzy agents to create new agents
+			this.agentController.forEach(agent ->{
+				try {
+					agent.kill();
+				} catch (StaleProxyException e) {
+					System.out.println(e.getMessage());
+				}
+			});
 			
             try {
             	if (bw != null)
